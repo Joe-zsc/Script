@@ -292,22 +292,7 @@ class KnowledgeExplorer(Agent):
         target_id = 0
         self.task_num_episodes += 1
 
-        if self.use_curriculum_guide and self.task_num_episodes < self.max_guide_episodes:  #and self.last_episode_reward < 0:
-            max_guide_eps_steps_rate = self.guide_step_threshold[
-                self.task_num_episodes]
-            # guide_kl_scale = self.kl_guide_scale[self.task_num_episodes]
-        else:
-            max_guide_eps_steps_rate = self.curriculum_guide_params[
-                "min_guide_step_rate"]
-            # guide_kl_scale = 0
-            self.guide_policy = None
-
-        max_guide_eps_steps = max_guide_eps_steps_rate * self.config.step_limit
-
-        if self.use_reward_scaling:
-            self.reward_scaling.reset()
-        # for target_id in range(len(self.target_list)):
-        # random.shuffle(target_list)
+        
         while target_id < len(target_list):
             done = 0
             target_step = 0
@@ -503,11 +488,8 @@ class KnowledgeKeeper(Agent):
 
             for i in pbar:
                 batch = random.sample(expert_data.memory, training_batch_size)
-                if self.loss_metric == "dkd":
-                    transfer_loss = self.calculate_dkd(train_batch=batch,
-                                                       task_id=task_id)
-                elif self.loss_metric == "kd":
-                    transfer_loss = self.calculate_KL(train_batch=batch,
+
+                transfer_loss = self.calculate_KL(train_batch=batch,
                                                       task_id=task_id)
 
                 retrospection_loss = self.calculate_retrospection(
