@@ -214,72 +214,7 @@ class KnowledgeExplorer(Agent):
     def set_guide_policy(self, guide_policy=None):
         self.guide_policy = guide_policy
 
-    def get_guide_action(self, observation):
-        state = torch.tensor([observation],
-                             dtype=torch.float).to(self.guide_policy.device)
-        with torch.no_grad():
-            dist = Categorical(probs=self.guide_policy.actor(state))
 
-            sample_guide_action = dist.sample()
-            guide_probs = torch.squeeze(
-                dist.log_prob(sample_guide_action)).item()
-            guide_action = torch.squeeze(sample_guide_action).item()
-
-        return (guide_action, guide_probs)
-
-    def get_expert_samples(self, target: HOST, batch_size, determinate=True):
-
-        memory = Memory(Transition=expert_Transition)
-        data_num = 0
-        episode = 0
-        # while data_num < batch_size:
-
-        with tqdm(
-                range(int(batch_size)),
-                leave=False,
-                desc=f"{color.color_str('Generate expert samples',c=color.CYAN)}"
-        ) as pbar:
-            while data_num < batch_size:
-                # for data_num in pbar:
-                steps = 0
-                done = 0
-                episode += 1
-                episode_return = 0
-                o = target.reset()
-                if self.use_state_norm:
-                    o = self.state_norm(o, update=False)
-                while not done and steps < self.config.step_limit:
-                    state = torch.tensor([o], dtype=torch.float).to(
-                        self.Policy.device)
-                    with torch.no_grad():
-                        a_logit = self.Policy.actor.net(state)
-                        a_prob = F.softmax(a_logit, dim=-1)
-                    if not determinate:
-                        dist = Categorical(probs=a_prob)
-                        action = torch.squeeze(dist.sample())
-                        a = int(action.item())
-                    else:
-                        action = a_prob.argmax()
-                        a = int(action)
-
-                    next_o, r, done, result = target.perform_action(a)
-                    episode_return += r
-                    if self.use_state_norm:
-                        next_o = self.state_norm(next_o, update=False)
-                    o = next_o
-                    steps += 1
-
-                    memory.push(state, a_logit, action.unsqueeze(0), done)
-                    data_num += 1
-
-                    if data_num >= batch_size:
-                        break
-                pbar.update(steps)
-                pbar.set_postfix(
-                    r=color.color_str(f"{episode_return}", c=color.PURPLE),
-                    step=color.color_str(f"{steps}", c=color.GREEN),
-                )
-        return memory
 
     def run_train_episode(self, target_list, explore=False, update_norm=True):
 
@@ -291,7 +226,6 @@ class KnowledgeExplorer(Agent):
         failed_num = 0
         target_id = 0
         self.task_num_episodes += 1
-
         
         while target_id < len(target_list):
             done = 0
