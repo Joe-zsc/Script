@@ -40,9 +40,7 @@ sbert_model = MySbertModel ; your sentence-bert model name, e,g., all-MiniLM-L12
 
 ## Hyperparameters of SCRIPT
 
-Default key hyperparameter settings can be found in : see class ``Script_Config``
-
-
+Default key hyperparameter settings can be found in ```RL_policy/config.py ``` : see class ``Script_Config``
 
 ### Training with simulated environments
 
