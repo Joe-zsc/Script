@@ -1,0 +1,6 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    ewc_lambda : 0
+    beta : 0
+    use_retrospection_loss : False

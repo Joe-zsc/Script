@@ -1,0 +1,7 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+
+    use_curriculum_guide : False
+    guide_kl_scale: 0
+  

@@ -76,6 +76,8 @@ def build_net(input_dim: int,
     for l in range(len(layers_)):
         layers.append(layers_[l])
         if l < len(layers_) - 1:
+            if use_layer_norm:
+                layers.append(nn.LayerNorm([hidden_shape[l]]))
             layers.append(hid_activation_())
             if use_batchnorm:
                 layers.append(nn.BatchNorm1d(hidden_shape[l]))

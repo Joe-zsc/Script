@@ -1,0 +1,4 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    reset_teacher : False

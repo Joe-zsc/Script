@@ -1,0 +1,6 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    guide_kl_scale: 0
+  
+#! test paras of script with retrospection_loss based on script-37

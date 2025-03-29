@@ -1,0 +1,5 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    ewc_lambda : 0
+
