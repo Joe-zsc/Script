@@ -1,0 +1,5 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    beta : 0
+    use_retrospection_loss : False

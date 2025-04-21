@@ -1,0 +1,5 @@
+CRL_Method:
+  name: 'script'
+  HyperParameters:
+    guide_kl_scale: 0
+  

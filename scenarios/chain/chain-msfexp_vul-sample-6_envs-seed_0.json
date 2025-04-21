@@ -1,0 +1,353 @@
+[
+    {
+        "ip": "192.168.1.25",
+        "port": [
+            "22",
+            "2222",
+            "4505",
+            "4506",
+            "8000"
+        ],
+        "services": [
+            "ssh OpenSSH 9.1p1 Debian 1",
+            "ssh OpenSSH 7.9p1 Debian 10+deb10u2",
+            "zmtp ZeroMQ ZMTP 2.0 ",
+            "zmtp ZeroMQ ZMTP 2.0 ",
+            "http CherryPy wsgiserver "
+        ],
+        "os": "Linux",
+        "web_fingerprint_component": [
+            {
+                "target": "https://192.168.153.137:8000/",
+                "http_status": 200,
+                "request_config": {
+                    "headers": {
+                        "User-Agent": "WhatWeb/0.5.5"
+                    }
+                },
+                "plugins": {
+                    "IP": {
+                        "string": [
+                            "192.168.153.137"
+                        ]
+                    },
+                    "UncommonHeaders": {
+                        "string": [
+                            "access-control-allow-origin,access-control-expose-headers,access-control-allow-credentials"
+                        ]
+                    },
+                    "Country": {
+                        "string": [
+                            "RESERVED"
+                        ],
+                        "module": [
+                            "ZZ"
+                        ]
+                    },
+                    "HTTPServer": {
+                        "string": [
+                            "CherryPy/18.6.0"
+                        ]
+                    },
+                    "Allow": {
+                        "module": [
+                            "GET, HEAD, POST"
+                        ]
+                    }
+                }
+            }
+        ],
+        "vulnerability": [
+            "CVE-2020-16846"
+        ],
+        "web_fingerprint": [
+            " Allow[GET HEAD POST] HTTPServer[CherryPy/18.6.0] UncommonHeaders[access-control-allow-originaccess-control-expose-headersaccess-control-allow-credentials]"
+        ]
+    },
+    {
+        "ip": "192.168.1.27",
+        "port": [
+            "22",
+            "7001"
+        ],
+        "services": [
+            "SSH",
+            "http Oracle WebLogic admin httpd 12.1.3.0"
+        ],
+        "os": "Linux",
+        "web_fingerprint": [
+            " Cookies[ADMINCONSOLESESSION] HttpOnly[ADMINCONSOLESESSION] PasswordField[j_password] Script[text/javascript] Title[Oracle WebLogic Server Administration Console] X-Frame-Options[DENY]"
+        ],
+        "vulnerability": [
+            "CVE-2020-2555"
+        ]
+    },
+    {
+        "ip": "192.168.1.3",
+        "port": [
+            "22",
+            "8080"
+        ],
+        "services": [
+            "ssh OpenSSH 9.1p1 Debian 1",
+            "http Jetty 9.2.z-SNAPSHOT"
+        ],
+        "os": "Linux",
+        "web_fingerprint_component": [
+            {
+                "target": "http://192.168.153.137:8080/",
+                "http_status": 200,
+                "request_config": {
+                    "headers": {
+                        "User-Agent": "WhatWeb/0.5.5"
+                    }
+                },
+                "plugins": {
+                    "IP": {
+                        "string": [
+                            "192.168.153.137"
+                        ]
+                    },
+                    "Jenkins": {
+                        "version": [
+                            "2.46.1"
+                        ]
+                    },
+                    "UncommonHeaders": {
+                        "string": [
+                            "x-content-type-options,x-hudson-theme,x-hudson,x-jenkins,x-jenkins-session,x-hudson-cli-port,x-jenkins-cli-port,x-jenkins-cli2-port,x-instance-identity,x-ssh-endpoint"
+                        ]
+                    },
+                    "Script": {
+                        "string": [
+                            "text/javascript"
+                        ]
+                    },
+                    "HTML5": {},
+                    "Title": {
+                        "string": [
+                            "Dashboard [Jenkins]"
+                        ]
+                    },
+                    "OpenSearch": {
+                        "string": [
+                            "/opensearch.xml"
+                        ]
+                    },
+                    "HttpOnly": {
+                        "string": [
+                            "JSESSIONID.9f684bd0"
+                        ]
+                    },
+                    "Prototype": {},
+                    "Cookies": {
+                        "string": [
+                            "JSESSIONID.9f684bd0"
+                        ]
+                    },
+                    "Country": {
+                        "string": [
+                            "RESERVED"
+                        ],
+                        "module": [
+                            "ZZ"
+                        ]
+                    },
+                    "HTTPServer": {
+                        "string": [
+                            "Jetty(9.2.z-SNAPSHOT)"
+                        ]
+                    },
+                    "Jetty": {
+                        "version": [
+                            "9.2.z-SNAPSHOT"
+                        ]
+                    },
+                    "X-Frame-Options": {
+                        "string": [
+                            "sameorigin"
+                        ]
+                    }
+                }
+            }
+        ],
+        "vulnerability": [
+            "CVE-2017-1000353"
+        ],
+        "web_fingerprint": [
+            " Cookies[JSESSIONID.9f684bd0] HTML5 HTTPServer[Jetty(9.2.z-SNAPSHOT)] HttpOnly[JSESSIONID.9f684bd0] Jenkins[2.46.1] Jetty[9.2.z-SNAPSHOT] OpenSearch[/opensearch.xml] Prototype Script[text/javascript] Title[Dashboard [Jenkins]] UncommonHeaders[x-content-type-optionsx-hudson-themex-hudsonx-jenkinsx-jenkins-sessionx-hudson-cli-portx-jenkins-cli-portx-jenkins-cli2-portx-instance-identityx-ssh-endpoint] X-Frame-Options[sameorigin]"
+        ]
+    },
+    {
+        "ip": "192.168.1.17",
+        "port": [
+            "22",
+            "8080"
+        ],
+        "services": [
+            "ssh OpenSSH 9.1p1 Debian 1",
+            "http Jetty 9.4.31.v20200723"
+        ],
+        "os": "Linux",
+        "web_fingerprint_component": [
+            {
+                "target": "http://192.168.153.137:8080/",
+                "http_status": 200,
+                "request_config": {
+                    "headers": {
+                        "User-Agent": "WhatWeb/0.5.5"
+                    }
+                },
+                "plugins": {
+                    "IP": {
+                        "string": [
+                            "192.168.153.137"
+                        ]
+                    },
+                    "Title": {
+                        "string": [
+                            "S2-059 demo"
+                        ]
+                    },
+                    "Cookies": {
+                        "string": [
+                            "JSESSIONID"
+                        ]
+                    },
+                    "Country": {
+                        "string": [
+                            "RESERVED"
+                        ],
+                        "module": [
+                            "ZZ"
+                        ]
+                    },
+                    "HTTPServer": {
+                        "string": [
+                            "Jetty(9.4.31.v20200723)"
+                        ]
+                    },
+                    "Content-Language": {
+                        "string": [
+                            "en"
+                        ]
+                    },
+                    "Jetty": {
+                        "version": [
+                            "9.4.31.v20200723"
+                        ]
+                    }
+                }
+            }
+        ],
+        "vulnerability": [
+            "CVE-2019-0230"
+        ],
+        "web_fingerprint": [
+            " Cookies[JSESSIONID] HTTPServer[Jetty(9.4.31.v20200723)] Jetty[9.4.31.v20200723] Title[S2-059 demo]"
+        ]
+    },
+    {
+        "ip": "192.168.1.33",
+        "port": [
+            "22",
+            "8080"
+        ],
+        "services": [
+            "ssh OpenSSH 9.1p1 Debian 1",
+            "http Apache httpd 2.4.38"
+        ],
+        "os": "Linux",
+        "web_fingerprint_component": [
+            {
+                "target": "http://192.168.153.137:8080/",
+                "http_status": 200,
+                "request_config": {
+                    "headers": {
+                        "User-Agent": "WhatWeb/0.5.5"
+                    }
+                },
+                "plugins": {
+                    "IP": {
+                        "string": [
+                            "192.168.153.137"
+                        ]
+                    },
+                    "PHP": {
+                        "version": [
+                            "7.4.15"
+                        ]
+                    },
+                    "HTML5": {},
+                    "Title": {
+                        "string": [
+                            "Laravel"
+                        ]
+                    },
+                    "HttpOnly": {
+                        "string": [
+                            "laravel_session"
+                        ]
+                    },
+                    "X-Powered-By": {
+                        "string": [
+                            "PHP/7.4.15"
+                        ]
+                    },
+                    "Cookies": {
+                        "string": [
+                            "XSRF-TOKEN",
+                            "laravel_session"
+                        ]
+                    },
+                    "Country": {
+                        "string": [
+                            "RESERVED"
+                        ],
+                        "module": [
+                            "ZZ"
+                        ]
+                    },
+                    "Laravel": {},
+                    "Apache": {
+                        "version": [
+                            "2.4.38"
+                        ]
+                    },
+                    "HTTPServer": {
+                        "os": [
+                            "Debian Linux"
+                        ],
+                        "string": [
+                            "Apache/2.4.38 (Debian)"
+                        ]
+                    }
+                }
+            }
+        ],
+        "vulnerability": [
+            "CVE-2021-3129"
+        ],
+        "web_fingerprint": [
+            " Apache[2.4.38] Cookies[XSRF-TOKENlaravel_session] HTML5 HTTPServer[Debian Linux][Apache/2.4.38 (Debian)] HttpOnly[laravel_session] Laravel PHP[7.4.15] Title[Laravel] X-Powered-By[PHP/7.4.15]"
+        ]
+    },
+    {
+        "ip": "192.168.1.32",
+        "port": [
+            "22",
+            "8888"
+        ],
+        "services": [
+            "SSH",
+            "http Jetty 9.4.10.v20180503"
+        ],
+        "os": "Linux",
+        "web_fingerprint": [
+            " HTML5 HTTPServer[Jetty(9.4.10.v20180503)] Jetty[9.4.10.v20180503] Script Title[Apache Druid]"
+        ],
+        "vulnerability": [
+            "CVE-2021-25646"
+        ]
+    }
+]

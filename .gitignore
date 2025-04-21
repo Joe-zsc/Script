@@ -1,3 +1,9 @@
-/NLP_Module/BERT_pretrained/.
-/NLP_Module/BERT_pretrained/all-MiniLM-L12-v2
-/NLP_Module/BERT_pretrained/MyPreTrainedBERT
+runs
+log/*.log
+__pycache__
+other_repo
+/wandb
+log/experiment_record
+/.vscode
+/NLP_Module/Embedding_models/**
+!/NLP_Module/Embedding_models/readme.md

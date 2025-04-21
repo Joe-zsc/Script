@@ -3,4 +3,4 @@ from .OSScan import OSScan
 from .PortScan import PortScan
 from .ServiceScan import ServicesScan
 from .WebScan import WebScan
-from .Action import Action, Action_embedding
+from .Action import Action

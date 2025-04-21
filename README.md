@@ -1,8 +1,8 @@
-# Script
+# Script: **S**calable **C**ontinual **R**e**I**nforcement learning framework for autonomous **P**enetration **T**esting
 
 ## Introduction
 
-We are in the process of organizing the code, and shall release our codes upon acceptance of our paper, for reproduction of the results.
+This repository is a simplified implementation of the paper "SCRIPT: A Scalable Continual Reinforcement Learning Framework for Autonomous Penetration Testing".  In this work, we introduce SCRIPT, which is the first scalable continual reinforcement learning framework for autonomous pentesting, enabling agents to leverage previously learned knowledge to accelerate new task learning while avoiding catastrophic forgetting.
 
 ## Related Works
 
@@ -40,7 +40,7 @@ sbert_model = MySbertModel ; your sentence-bert model name, e,g., all-MiniLM-L12
 
 ## Hyperparameters of SCRIPT
 
-Default key hyperparameter settings can be found in ```RL_policy/config.py ``` : see class ``Script_Config``
+Default key hyperparameter settings can be found in ``RL_policy/config.py `` : see class ``Script_Config``
 
 ### Training with simulated environments
 
@@ -55,7 +55,3 @@ The learning curves can be seen via the Tensorboard:
 ```bash
 tensorboard --logdir runs --host localhost --port 6666
 ```
-
-### Training with real vulnerable host
-
-[April](https://github.com/Joe-zsc/April) (comming soon)

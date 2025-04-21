@@ -40,13 +40,14 @@ class Actor(nn.Module):
                  action_dim,
                  hidden_shape,
                  use_orthogonal_init=False,
+                #  use_layer_norm=False,
                  activate_func="relu"):
         super(Actor, self).__init__()
         self.net = build_net(
             input_dim=state_dim,
             output_dim=action_dim,
             hidden_shape=hidden_shape,
-            #  use_layer_norm=True,
+            #  use_layer_norm=use_layer_norm,
             # use_batchnorm=True,
             hid_activation=activate_func)
         self.state_dim = state_dim
@@ -76,6 +77,7 @@ class Critic(nn.Module):
                  state_dim,
                  hidden_shape,
                  use_orthogonal_init=False,
+                #  use_layer_norm=False,
                  activate_func="relu"):
         super(Critic, self).__init__()
 
@@ -83,7 +85,7 @@ class Critic(nn.Module):
             input_dim=state_dim,
             output_dim=1,
             hidden_shape=hidden_shape,
-            #  use_layer_norm=True,
+            #  use_layer_norm=use_layer_norm,
             # use_batchnorm=True,
             hid_activation=activate_func)
         self.state_dim = state_dim
@@ -124,12 +126,14 @@ class PPO_agent(BasePolicy):
                            Action.action_space,
                            self.config.hidden_sizes,
                            use_orthogonal_init=self.config.use_orthogonal_init,
+                        #    use_layer_norm=self.config.use_layer_norm,
                            activate_func=self.activate_func).to(self.device)
 
         self.critic = Critic(
             StateEncoder.state_space,
             self.config.hidden_sizes,
             use_orthogonal_init=self.config.use_orthogonal_init,
+            # use_layer_norm=self.config.use_layer_norm,
             activate_func=self.activate_func).to(self.device)
 
         self.a_lr = self.config.actor_lr
@@ -187,6 +191,8 @@ class PPO_agent(BasePolicy):
         if self.memory.count == self.batch_size:
             self.update(train_steps)
             self.memory.count = 0
+            return True
+        return False
 
     def evaluate(
         self,
