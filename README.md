@@ -55,3 +55,18 @@ The learning curves can be seen via the Tensorboard:
 ```bash
 tensorboard --logdir runs --host localhost --port 6666
 ```
+
+## Citation
+
+```
+@article{zhou_script_2025,
+	title = {{SCRIPT}: A Scalable Continual Reinforcement Learning Framework for Autonomous Penetration Testing},
+	volume = {285},
+	issn = {0957-4174},
+	doi = {https://doi.org/10.1016/j.eswa.2025.127827},
+	pages = {127827},
+	journaltitle = {Expert Systems with Applications},
+	author = {Zhou, Shicheng and Liu, Jingju and Lu, Yuliang and Yang, Jiahai and Zhang, Yue and Lin, Bo and Zhong, Xiaofeng and Hu, Shulong},
+	date = {2025},
+}
+```
