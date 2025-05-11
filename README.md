@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is a simplified implementation of the paper "SCRIPT: A Scalable Continual Reinforcement Learning Framework for Autonomous Penetration Testing".  In this work, we introduce SCRIPT, which is the first scalable continual reinforcement learning framework for autonomous pentesting, enabling agents to leverage previously learned knowledge to accelerate new task learning while avoiding catastrophic forgetting.
+This repository is a simplified implementation of the paper [SCRIPT: A Scalable Continual Reinforcement Learning Framework for Autonomous Penetration Testing](https://www.sciencedirect.com/science/article/abs/pii/S0957417425014496).  In this work, we introduce SCRIPT, which is the first scalable continual reinforcement learning framework for autonomous pentesting, enabling agents to leverage previously learned knowledge to accelerate new task learning while avoiding catastrophic forgetting.
 
 ## Related Works
 
